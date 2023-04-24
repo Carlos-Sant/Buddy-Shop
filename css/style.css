@@ -1,0 +1,171 @@
+.thumbnail-product{
+    height: 150px !important;
+    max-width: 150px !important;
+}
+.sale-real-price{
+    text-decoration: line-through;
+}
+.sale-offer-price{
+    color: green;
+}
+.producto-agotado{
+    color: red;
+}
+.producto-disponible{
+    color: darkgreen;
+}
+.user-photo{
+    max-width: 200 px;
+}
+
+.botonescar{
+    text-align: right;
+}
+.borde-azul{
+    border:1px solid blue;
+}
+.foto-producto{
+    height:224px;
+    width:170px; 
+}
+
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+li.nav-item {
+    color:red
+}
+
+#direccion {
+    display: inline-block;
+    width: 290px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+input[type="text"] {
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    margin: 0 auto;
+}
+input[type="password"] {
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.user-image{
+    float: right;
+    max-width: 200px;
+}
+
+#foto-perfil{
+    float: right;
+    max-width: 500px;
+}
+
+.buttons {
+    width: 90px;
+    height: 40px;
+    display: inline-block;
+}
+
+.catlab {
+    display: inline-block;
+}
+
+.tabla-foto {
+    float: right;
+}
+
+.tabla-prod{
+    border-collapse: collapse;
+}
+
+
+.borde-tabla td, .borde-tabla th {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+.boton{
+    border: 1px solid black;
+    background-color: gainsboro;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+#contenido{
+    padding-bottom: 50px;
+}
+
+.fotoperfil{
+    max-width: 200px;
+}
+
+.tablacomp{
+    width: 100%;
+}
+.tablacomp td, .tablacomp tr, .tablacomp th{
+   padding: 20;
+    border: 3px solid black;
+}
+
+.tablacomp th{
+    background-color: aqua;
+}
+
+.adminis{
+    margin:0px;
+    padding: auto;
+}
+
+.card {
+    display: inline-block;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-width: 300px;
+    padding: 20px;
+    margin-right: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.we-text {
+    margin: 20px;
+}
+
+.cabeza-table{
+    background-color: grey;
+   
+}
+
+h1{
+    font-family: 'DynaPuff', cursive;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.navbar-brand{
+    font-family: 'DynaPuff', cursive;
+font-family: 'Sedgwick Ave Display', cursive;
+}
+
+
