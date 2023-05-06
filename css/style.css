@@ -107,9 +107,10 @@ input[type="password"] {
     align-items: center;
 }
 footer {
-    position: fixed;
-    bottom: 0;
+    background-color: azure;
+    align-self: flex-end;
     width: 100%;
+    text-align:center;
   }
 
 #contenido{
