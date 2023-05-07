@@ -26,87 +26,87 @@
         <h1 class="text-left">Mis datos</h1>
         <section>
 
-            <br>
-            <!-- Por el momento dejo esta parte como comentario para que el mensaje de error pueda salir
-            hasta que avancemos mas en el javascript no se cambiara esta pequeña parte -->
-            <!-- <form class="row g-3 needs-validation" novalidate> -->
-            <form action="row g-3 needs-validation">
-                <div class="container-fluid">
-                    <div class="row">
-                        <!-- Barras de texto donde el usuario podra escribir sus datos -->
-                        <div class="col-sm-12 col-md-6">
+          <br>
+          <!-- Por el momento dejo esta parte como comentario para que el mensaje de error pueda salir
+          hasta que avancemos mas en el javascript no se cambiara esta pequeña parte -->
+          <!-- <form class="row g-3 needs-validation" novalidate> -->
+            <form  method="POST" action="recibir_datos" id="userRegister">
+              <div class="container-fluid">
+                  <div class="row">
+                      <!-- Barras de texto donde el usuario podra escribir sus datos -->
+                      <div class="col-sm-12 col-md-6">
+                         <div class="mb-3 fw-bold">
+                          <label for="rut" class="form-label">RUT</label>
+                          <input type="text" class="form-control" id="rut" placeholder="ej 11111111-1" required>
+                          <div class="invalid-feedback">Error no ha llenado el lugar rut</div>
+                          </div> 
+                  
+                          <div class="mb-3 fw-bold">
+                           <label for="nombres" class="form-label">Nombres</label>
+                           <input type="text" class="form-control" id="nombres" placeholder="ej Juan Pedro" required>
+                           <div class="invalid-feedback">Error el lugar de nombre se encuentra vacio</div>
+                          </div>
+                          <div class="mb-3 fw-bold">
+                           <label for="apellidos" class="form-label">Apellidos</label>
+                           <input type="text" class="form-control" id="apellidos" placeholder="ej Peréz Rojas" required>
+                           <div class="invalid-feedback">Error el lugar de Apellidos se encuentra vacio</div>
+                          </div>
+                        
+                          <div class="mb-3 fw-bold">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="text" class="form-control" id="email" placeholder="ej buddystore@gmail.com" required>
+                           <div class="invalid-feedback">Error el lugar de Email se encuentra vacio</div>
+                          </div> 
+                          <div class="mb-3 fw-bold">
+                            <h6 for="comuna" class="form-label">Direccion</h6>
+                            <textarea rows="4" class="form-control" id="direccion"  required> </textarea>
+                            <div class="invalid-feedback">Error el campo de Direccion se encuentra vacio</div>
+                           </div>      
                            <div class="mb-3 fw-bold">
-                            <label for="rut" class="form-label">RUT</label>
-                            <input type="text" class="form-control" id="rut" placeholder="ej 11111111-1" required>
-                            <div class="invalid-feedback">Error no ha llenado el lugar rut</div>
-                            </div> 
-                    
-                            <div class="mb-3 fw-bold">
-                             <label for="nombres" class="form-label">Nombres</label>
-                             <input type="text" class="form-control" id="nombres" placeholder="ej Juan Pedro" required>
-                             <div class="invalid-feedback">Error el lugar de nombre se encuentra vacio</div>
-                            </div>
-                            <div class="mb-3 fw-bold">
-                             <label for="apellidos" class="form-label">Apellidos</label>
-                             <input type="text" class="form-control" id="apellidos" placeholder="ej Peréz Rojas" required>
-                             <div class="invalid-feedback">Error el lugar de Apellidos se encuentra vacio</div>
-                            </div>
-                          
-                            <div class="mb-3 fw-bold">
-                             <label for="email" class="form-label">Email</label>
-                             <input type="text" class="form-control" id="email" placeholder="ej buddystore@gmail.com" required>
-                             <div class="invalid-feedback">Error el lugar de Email se encuentra vacio</div>
-                            </div> 
-                            <div class="mb-3 fw-bold">
-                              <h6 for="comuna" class="form-label">Dirección</h6>
-                              <textarea rows="4" class="form-control" id="direccion"  required> </textarea>
-                              <div class="invalid-feedback">Error el campo de Dirección se encuentra vacio</div>
-                             </div>      
-                             <div class="mb-3 fw-bold">
-                             <label for=" Con Subscripción" class="form-abel"> Con Subscripción</label>
-                            </div>
-                             <div class="mb-3 form-check ">
-                              <input type="checkbox" class="form-check-input" id="Con Subscripción">
-                              <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales y obtener un 5% de descuento en mis compras</label>
-                            </div>
-                            <div class="mb-3 fw-bold">
-                              <label for="contraseña" class="form-label">Contraseña</label>
-                              <input type="password" class="form-control" id="contraseña" placeholder="minimo 8 caracteres" required>
-                                 <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
-                             </div> 
-                             <div class="mb-3 fw-bold">
-                              <label for="recontraseña" class="form-label"> Repetir Contraseña</label>
-                              <input type="password" class="form-control" id="recontraseña" placeholder="Por favor repita la contraseña" required>
-                                 <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
-                             </div> 
+                           <label for=" Con Subscripción" class="form-abel"> Con Subscripción</label>
+                          </div>
+                           <div class="mb-3 form-check ">
+                            <input type="checkbox" class="form-check-input" id="Con Subscripción">
+                            <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales y obtener un 5% de descuento en mis compras</label>
+                          </div>
+                          <div class="mb-3 fw-bold">
+                            <label for="contraseña" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="contraseña" placeholder="minimo 8 caracteres" required>
+                               <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
+                           </div> 
+                           <div class="mb-3 fw-bold">
+                            <label for="recontraseña" class="form-label"> Repetir Contraseña</label>
+                            <input type="password" class="form-control" id="recontraseña" placeholder="Por favor repita la contraseña" required>
+                               <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
+                           </div> 
 
-                          
-                            <button type="submit" class="btn btn-primary">Registrarse</button> 
-                            <button type="reset" class="btn btn-primary">Borrar todo</button>
-                        </div>
-                         <!-- Aqui esta la foto de perfil donde el usuario podra elegirla desde su escritorio -->
-                        <div class="col-sm-12 col-md-6">
-                            <table>
-                                <tr>
-                                    <td>
-                                    <img src="img/foto perfil.png" alt="" class="fotoperfil">    
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      <div class="text-center ">
-                                        <button type="submit" class="btn btn-primary">Examinar...</button>
-                                      </div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </div>
-  </main>
+                        
+                          <button type="submit" class="btn btn-primary">Registrarse</button> 
+                          <button type="reset" class="btn btn-primary">Borrar todo</button>
+                      </div>
+                       <!-- Aqui esta la foto de perfil donde el usuario podra elegirla desde su escritorio -->
+                      <div class="col-sm-12 col-md-6">
+                          <table>
+                              <tr>
+                                  <td>
+                                  <img src="img/foto perfil.png" alt="" class="fotoperfil">    
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                    <div class="text-center ">
+                                      <button type="submit" class="btn btn-primary">Examinar...</button>
+                                    </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </section>
+  </div>
+</main>
   <div id="footer">
 
   </div>

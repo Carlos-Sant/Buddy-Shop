@@ -25,113 +25,109 @@
             <h1 class="text-begin">Registro de cliente</h1>
             <section>
 
-                <br>
-                <!-- Por el momento dejo esta parte como comentario para que el mensaje de error pueda salir
-                hasta que avancemos mas en el javascript no se cambiara esta pequeña parte -->
-                <!-- <form class="row g-3 needs-validation" novalidate> -->
-                <form action="row g-3 needs-validation">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <!-- Barras de texto donde el usuario podra escribir sus datos -->
-                            <div class="col-sm-12 col-md-6">
-                               <div class="mb-3 fw-bold">
-                                <h6 for="rut" class="form-label">RUT</h6>
-                                <input type="text" class="form-control" id="rut" placeholder="ej 11111111-1" required>
-                                <div class="invalid-feedback">Error no ha llenado el lugar rut</div>
-                                </div> 
-                                <div class="mb-3 fw-bold">
-                                 <h6 for="nombres" class="form-label">Nombres</h6>
-                                 <input type="text" class="form-control" id="nombres" placeholder="ej Juan Pedro" required>
-                                 <div class="invalid-feedback">Error el lugar de nombre se encuentra vacio</div>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                 <h6 for="apellidos" class="form-label">Apellidos</h6>
-                                 <input type="text" class="form-control" id="apellidos" placeholder="ej Peréz Rojas" required>
-                                 <div class="invalid-feedback">Error el lugar de Apellidos se encuentra vacio</div>
-                                </div>
-                                <div class="mb-3 fw-bold">
-                                 <h6 for="comuna" class="form-label">Direcciónn</h6>
-                                 <textarea rows="4" class="form-control" id="direccion"  required> </textarea>
-                                 <div class="invalid-feedback">Error el campo de Dirección se encuentra vacio</div>
-                                </div>                                
-                                <div class="mb-3 fw-bold">
-                                 <h6 for="email" class="form-label">Email</h6>
-                                 <input type="text" class="form-control" id="email" placeholder="ej buddystore@gmail.com" required>
-                                 <div class="invalid-feedback">Error el lugar de Email se encuentra vacio</div>
-                                </div>
-                              <div> 
-                                <label for=" Con Subscripción" class="form-abel fw-bold"> Con Subscripción</label>
+              <br>
+              <!-- Por el momento dejo esta parte como comentario para que el mensaje de error pueda salir
+              hasta que avancemos mas en el javascript no se cambiara esta pequeña parte -->
+              <!-- <form class="row g-3 needs-validation" novalidate> -->
+              <form  method="POST" action="recibir_datos" id="userRegister">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <!-- Barras de texto donde el usuario podra escribir sus datos -->
+                          <div class="col-sm-12 col-md-6">
+                             <div class="mb-3 fw-bold">
+                              <h6 for="rut" class="form-label">RUT</h6>
+                              <input name="rut" type="text" class="form-control" id="rut" placeholder="Ingrese su rut">
+                              </div> 
+                              <div class="mb-3 fw-bold">
+                               <h6 for="nombres" class="form-label">Nombres</h6>
+                               <input name="nombres" type="text" class="form-control" id="nombres" placeholder="ej Juan Pedro">
                               </div>
-                              
-                               <div class="mb-3 form-check ">
-                                <input type="checkbox" class="form-check-input" id="Con Subscripción">
-                                <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales 
-                                  <br> 
-                                  y obtener un 5% de descuento en mis compras</label>
+                              <div class="mb-3 fw-bold">
+                               <h6 for="apellidos" class="form-label">Apellidos</h6>
+                               <input name="apellidos" type="text" class="form-control" id="apellidos" placeholder="ej Peréz Rojas">
                               </div>
+                              <div class="mb-3 fw-bold">
+                               <h6 for="direccion" class="form-label">Direccion</h6>
+                               <textarea name="direccion" rows="4" class="form-control" id="direccion" > </textarea>
                                
-                                    <!-- Esta parte se incluyen los contactos por movil o telefono lo deje 
-                                        sin required para añadir campos que no sean obligatorios -->
-                                        <!-- Hasta el momento dejare esto en texto pero sigo pensando que esto podria ser util en el
-                                        sentido de variar un poco con los trabajos de los otros grupos -->
-                                <!-- <div class="mb-3 fw-bold">  
-                                 <label for="celular" class="form-label">Celular</label>
-                                 <input type="text" class="form-control" id="celular" placeholder="ej 123456789">
-                                </div>
-                                <div class="mb-3 fw-bold">  
-                                  <label for="telefono" class="form-label">Telefono</label>
-                                  <input type="text" class="form-control" id="telefono" placeholder="ej 123456789">
-                                </div>  -->
-                                <!-- Este sera la contraseña el campo donde los caracteres seran cambiados en oculto -->
-                                <div class="mb-3 fw-bold">
-                                  <h6 for="contraseña" class="form-label">Contraseña</h6>
-                                  <input type="password" class="form-control" id="contraseña" placeholder="minimo 8 caracteres" required>
-                                     <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
-                                 </div>
-                                 <div class="mb-3 fw-bold">
-                                  <h6 for="repContraseña" class="form-label">Repetir contraseña</h6>
-                                  <input type="password" class="form-control" id="repContraseña"  required>
-                                     <div class="invalid-feedback">Error no ha llenado el campo de Repetir contraseña</div>
-                                 </div> 
-                                 <div id="informationHelp" class="form-text">Nunca compartiremos su informacion con nadie mas </div>
-                                 <!-- Aqui dejo tambien un checkbox para imitar un poco otras paginas e añadir la funcion de terminos y servicios -->
-                                 <div class="mb-3 form-check ">
-                                  <input type="checkbox" class="form-check-input" id="acceptterm">
-                                  <label class="form-check-label" for="Con subscripción">Acepto los <a href="nosotros_c.html">Terminos y servicios</a> de la 
-                                    pagina al registrarme</label>
-                                </div>
-                                <!-- Estos son los botones que moveran los datos ingresados aqui, 
-                                    el de grabar y el de limpiar todas las cajas de texto  -->
-                                    <div>
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
-                                <button type="reset" class="btn btn-primary">Borrar todo</button>
+                              </div>                                
+                              <div class="mb-3 fw-bold">
+                               <h6 for="email" class="form-label">Email</h6>
+                               <input name="email" type="email" class="form-control" id="email" placeholder="ej buddystore@gmail.com" >
                               </div>
+                            <div> 
+                              <label for=" Con Subscripción" class="form-abel fw-bold"> Con Subscripción</label>
                             </div>
-                             <!-- Aqui esta la foto de perfil donde el usuario podra elegirla desde su escritorio -->
-                            <div class="col-sm-12 col-md-6">
-                                <table>
-                                    <tr>
-                                        <td>
-                                        <img src="img/icono de usuario.png" alt="" class="user-photo">    
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <input type="file" class="form-control">
-                                        </td>
-                                    </tr>
-                                </table>
+                            
+                             <div class="mb-3 form-check ">
+                              <input type="checkbox" class="form-check-input" id="Con Subscripción">
+                              <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales 
+                                <br> 
+                                y obtener un 5% de descuento en mis compras</label>
                             </div>
-                        </div>
-                    </div>
-
-            </section>
-        </div>
-      </main>
-      <br>
-      <br>
-      <br>
-      <br>
+                             
+                                  <!-- Esta parte se incluyen los contactos por movil o telefono lo deje 
+                                      sin required para añadir campos que no sean obligatorios -->
+                                      <!-- Hasta el momento dejare esto en texto pero sigo pensando que esto podria ser util en el
+                                      sentido de variar un poco con los trabajos de los otros grupos -->
+                              <!-- <div class="mb-3 fw-bold">  
+                               <label for="celular" class="form-label">Celular</label>
+                               <input type="text" class="form-control" id="celular" placeholder="ej 123456789">
+                              </div>
+                              <div class="mb-3 fw-bold">  
+                                <label for="telefono" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="telefono" placeholder="ej 123456789">
+                              </div>  -->
+                              <!-- Este sera la contraseña el campo donde los caracteres seran cambiados en oculto -->
+                              <div class="mb-3 fw-bold">
+                                <h6 for="contraseña" class="form-label">Contraseña</h6>
+                                <input name="contraseña" type="password" class="form-control" id="contraseña" value="" placeholder="minimo 5 caracteres">
+                               </div>
+                               <div class="mb-3 fw-bold">
+                                <h6 for="repContraseña" class="form-label">Repetir contraseña</h6>
+                                <input name="repContraseña" type="password" class="form-control" id="repContraseña" value="">
+                                  
+                               </div> 
+                               <div id="informationHelp" class="form-text">Nunca compartiremos su informacion con nadie mas </div>
+                               <!-- Aqui dejo tambien un checkbox para imitar un poco otras paginas e añadir la funcion de terminos y servicios -->
+                               <div class="mb-3 form-check ">
+                                <input type="checkbox" class="form-check-input" id="acceptterm">
+                                <label class="form-check-label" for="Con subscripción">Acepto los <a href="nosotros_c.html">Terminos y servicios</a> de la 
+                                  pagina al registrarme</label>
+                              </div>
+                              <!-- Estos son los botones que moveran los datos ingresados aqui, 
+                                  el de grabar y el de limpiar todas las cajas de texto  -->
+                                  <div>
+                                  <button id="btn_enviar" type="submit" class="btn btn-primary">Registrar</button>
+                              <button type="reset" class="btn btn-primary">Borrar todo</button>
+                                  </form>
+                                  </div>
+                          </div>
+                           <!-- Aqui esta la foto de perfil donde el usuario podra elegirla desde su escritorio -->
+                          <div class="col-sm-12 col-md-6">
+                              <table>
+                                  <tr>
+                                      <td>
+                                      <img src="img/icono de usuario.png" alt="" class="user-photo">    
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <input type="file" class="form-control">
+                                      </td>
+                                  </tr>
+                              </table>
+                          </div>
+                      </div>
+                  </div>
+                  
+          </section>
+      </div>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
       <div id="footer">
 
       </div>
