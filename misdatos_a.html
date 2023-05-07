@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Usuarios</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Misdatos</title>
+  <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +25,7 @@
           <img src="img/logo_new.jpg" width="40" height="40" alt="">
         </a>
       </nav>
-      <a class="navbar-brand" href="index_a.html" style="  font-family: 'DynaPuff', cursive;
-      font-family: 'Sedgwick Ave Display', cursive;">Buddy Store</a>
+      <a class="navbar-brand" href="index_a.html">Buddy Store</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,141 +60,91 @@
     </div>
     </nav>
 </header>
-  <h1 style="font-family: 'DynaPuff', cursive;
-  text-decoration: underline;
-  text-align: center;">Mantenedor de Usuarios</h1>
   <main role="main">
-    <div id="contenido">
-      <form action="row g-3 needs-validation">
-        <div class="container-fluid">
-          <div class="row">
-            <!-- Barras de texto donde el usuario podra escribir sus datos -->
-            <div class="col-sm-12 col-md-6">
-              <div class="mb-3 fw-bold">
-                <label for="rut" class="form-label">ID</label>
-                <input type="text" class="form-control" id="id" placeholder="ej 1" required>
-                <div class="invalid-feedback">Error no ha llenado el lugar ID</div>
-              </div>
-              <div class="mb-3 fw-bold">
-                <label for="contraseña" class="form-label">RUT</label>
-                <input type="password" class="form-control" id="rut" placeholder="EJ 12.345.678-K" required>
-                <div class="invalid-feedback">Error no ha llenado el lugar RUT</div>
-              </div>
-              <div class="mb-3 fw-bold">
-                <label for="nombres" class="form-label">Nombres</label>
-                <input type="text" class="form-control" id="nombres" placeholder="ej Juan Pedro" required>
-                <div class="invalid-feedback">Error el lugar de nombre se encuentra vacio</div>
-              </div>
-              <div class="mb-3 fw-bold">
-                <label for="apellidos" class="form-label">Apellidos</label>
-                <input type="text" class="form-control" id="apellidos" placeholder="ej Peréz Rojas" required>
-                <div class="invalid-feedback">Error el lugar de Apellidos se encuentra vacio</div>
-              </div>
-              <div class="mb-3 fw-bold">
-                <label for="comuna" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="direccion" placeholder="ej Las Condes" required>
-                <div class="invalid-feedback">Error el lugar de Comuna se encuentra vacio</div>
-              </div>
-              <div class="mb-3 form-check ">
-                <input type="checkbox" class="form-check-input" id="Con Subscripción">
-                <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales y obtener un 5% de descuento en mis compras</label>
-              </div>
-              <div class="mb-3 fw-bold">
-                <label for="email" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="pass" placeholder="Ej Duoc@123" required>
-                <div class="invalid-feedback">Error el lugar de Contraseña se encuentra vacio</div>
-              </div>
+    <div class="container">
+        <h1 class="text-left">Mis datos</h1>
+        <section>
 
-            <!-- Aqui esta la foto de perfil donde el usuario podra elegirla desde su escritorio -->
-            <div class="col-sm-12 col-md-6">
-              <table>
-                <tr>
-                  <td>
-                    <img src="img/icono de usuario.png" alt="" class="user-photo">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="file" class="form-control">
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </form>
-      </section>
+            <br>
+            <!-- Por el momento dejo esta parte como comentario para que el mensaje de error pueda salir
+            hasta que avancemos mas en el javascript no se cambiara esta pequeña parte -->
+            <!-- <form class="row g-3 needs-validation" novalidate> -->
+            <form action="row g-3 needs-validation">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Barras de texto donde el usuario podra escribir sus datos -->
+                        <div class="col-sm-12 col-md-6">
+                           <div class="mb-3 fw-bold">
+                            <label for="rut" class="form-label">RUT</label>
+                            <input type="text" class="form-control" id="rut" placeholder="ej 11111111-1" required>
+                            <div class="invalid-feedback">Error no ha llenado el lugar rut</div>
+                            </div> 
+                    
+                            <div class="mb-3 fw-bold">
+                             <label for="nombres" class="form-label">Nombres</label>
+                             <input type="text" class="form-control" id="nombres" placeholder="ej Juan Pedro" required>
+                             <div class="invalid-feedback">Error el lugar de nombre se encuentra vacio</div>
+                            </div>
+                            <div class="mb-3 fw-bold">
+                             <label for="apellidos" class="form-label">Apellidos</label>
+                             <input type="text" class="form-control" id="apellidos" placeholder="ej Peréz Rojas" required>
+                             <div class="invalid-feedback">Error el lugar de Apellidos se encuentra vacio</div>
+                            </div>
+                          
+                            <div class="mb-3 fw-bold">
+                             <label for="email" class="form-label">Email</label>
+                             <input type="text" class="form-control" id="email" placeholder="ej buddystore@gmail.com" required>
+                             <div class="invalid-feedback">Error el lugar de Email se encuentra vacio</div>
+                            </div> 
+                            <div class="mb-3 fw-bold">
+                              <h6 for="comuna" class="form-label">Direccion</h6>
+                              <textarea rows="4" class="form-control" id="direccion"  required> </textarea>
+                              <div class="invalid-feedback">Error el campo de Direccion se encuentra vacio</div>
+                             </div>      
+                             <div class="mb-3 fw-bold">
+                             <label for=" Con Subscripción" class="form-abel"> Con Subscripción</label>
+                            </div>
+                             <div class="mb-3 form-check ">
+                              <input type="checkbox" class="form-check-input" id="Con Subscripción">
+                              <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales y obtener un 5% de descuento en mis compras</label>
+                            </div>
+                            <div class="mb-3 fw-bold">
+                              <label for="contraseña" class="form-label">Contraseña</label>
+                              <input type="password" class="form-control" id="contraseña" placeholder="minimo 8 caracteres" required>
+                                 <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
+                             </div> 
+                             <div class="mb-3 fw-bold">
+                              <label for="recontraseña" class="form-label"> Repetir Contraseña</label>
+                              <input type="password" class="form-control" id="recontraseña" placeholder="Por favor repita la contraseña" required>
+                                 <div class="invalid-feedback">Error no ha llenado el lugar contraseña</div>
+                             </div> 
+
+                          
+                            <button type="submit" class="btn btn-primary">Registrarse</button> 
+                            <button type="reset" class="btn btn-primary">Borrar todo</button>
+                        </div>
+                         <!-- Aqui esta la foto de perfil donde el usuario podra elegirla desde su escritorio -->
+                        <div class="col-sm-12 col-md-6">
+                            <table>
+                                <tr>
+                                    <td>
+                                    <img src="img/foto perfil.png" alt="" class="fotoperfil">    
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <div class="text-center ">
+                                        <button type="submit" class="btn btn-primary">Examinar...</button>
+                                      </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
     </div>
-    <div class="buttons">
-      <button type="submit" class="btn btn-primary">Guardar</button>
-      <button type="submit" class="btn btn-primary">Nuevo</button>
-      <button type="submit" class="btn btn-primary">Eliminar</button>
-    </div>
-    </form>
-    <div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <td>ID</td>
-            <td>TIPO USUARIO</td>
-            <td>RUT</td>
-            <td>NOMBRES</td>
-            <td>APELLIDOS</td>
-            <td>CORREO</td>
-            <td>DIRECCIÓN</td>
-            <td>CON SUSCRIPCION</td>
-            <td>IMAGEN</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>34</td>
-            <td>Cliente</td>
-            <td>9.455.847-K</td>
-            <td>Juan</td>
-            <td>Perez</td>
-            <td>jperez@gmail.com</td>
-            <td>San Juan Bautista 423</td>
-            <td>Si</td>
-            <td><img src="img/NOTFOUND.png" alt="" srcset=""></td>
-          </tr>
-          <tr>
-            <td>35</td>
-            <td>Administrador</td>
-            <td>13.345.678-2</td>
-            <td>Ana</td>
-            <td>Torres</td>
-            <td>atorres@gmail.com</td>
-            <td>San Juan Bautista 423</td>
-            <td>No</td>
-            <td><img src="img/NOTFOUND.png" alt="" srcset=""></td>
-          </tr>
-          <tr>
-            <td>36</td>
-            <td>Cliente</td>
-            <td>26.846.927-K</td>
-            <td>Pedro</td>
-            <td>Gonzales</td>
-            <td>pgonzales@gmail.com</td>
-            <td>San Juan Bautista 423</td>
-            <td>No</td>
-            <td><img src="img/NOTFOUND.png" alt="" srcset=""></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
   </main>
   <footer id="footer">
     <div class="container text-center">
@@ -230,6 +179,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
     crossorigin="anonymous"></script>
-  <script src="js/javascript.js"></script>
+</body>
 
 </html>
