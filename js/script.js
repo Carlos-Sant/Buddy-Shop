@@ -9,7 +9,7 @@ if (this.readyState ==4 && this.status == 200){
 xhttp.open('GET','menu-superior.html',true);
 xhttp.send();
 
-fetch('https://fakestoreapi.com/products/category/men%27s%20clothing')
+fetch('https://fakestoreapi.com/products')
   .then(response => response.json())
   .then(products => {
     const cardsContainer = document.getElementById('cards-container');
@@ -170,6 +170,61 @@ fetch('https://fakestoreapi.com/products/category/men%27s%20clothing')
             equalTo:"La contraseña debe ser igual al anterior campo",
         },
 
+    },
+    });
+    
+    $("#mantenedoru").validate({
+        rules:{
+            id:{
+                required: true,
+                id:true,
+            },
+            rut:{
+                required: true,
+                rut: true,
+            },
+            nombres:{
+                required: true,
+                nombres: true,
+            },
+            apellidos: {
+                required: true,
+                apellidos: true,
+            },
+            direccion:{
+                required: true,
+                direccion: true,
+            },
+            pass:{
+                required:true,
+                minlength: 5,
+            },
+        },
+        messages: {
+            id:{
+            required:"El rut es un campo requerido para completar",
+            id:"El rut no cumple con el formato",
+        },
+        nombres:{
+            required:"El campo nombre es obligatorio para poder completar el registro",
+            nombres:"El nombre no cumple con el formato",
+        },
+        apellidos:{
+            required:"El campo apellidos es obligatorio para completrar el registro",
+            apellidos:"El apellido no cumple con el formato",
+        },
+        direccion:{
+            required:"La direccion es un campo obligatorio para completrar el registro",
+            direccion:"La direccion no cumple con el formato",
+        },
+        email:{
+            required:"El email es un campo obligatorio para completar el registro",
+            email:"El email no cumple con el formato",
+        },
+        contraseña:{
+            required:"La contraseña es un campo obligatorio y de suma importancia",
+            minlength:"La contraseña debe de tener un minimo de 5 caracteres",
+        },
     },
     });
 });
