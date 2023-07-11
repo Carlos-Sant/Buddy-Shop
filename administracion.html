@@ -1,35 +1,13 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Administración</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="menu-superior">
-
-    </div>
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
 <h1>Administrar tienda</h1>
 </div>
 <div class="list-group">
-  <a href="usuarios.html" class="list-group-item list-group-item-action list-group-item-primary">MANTENEDOR DE USUARIOS</a>
-  <a href="productos.html" class="list-group-item list-group-item-action list-group-item-primary">MANTENEDOR DE PRODUCTOS</a>
-  <a href="ventas.html" class="list-group-item list-group-item-action list-group-item-primary">HISTORIAL DE VENTAS</a>
-  <a href="bodega.html" class="list-group-item list-group-item-action list-group-item-primary">MANTENEDOR DE BODEGA</a>
+  <a href="{% url 'usuarios' 'crear' '0' %}" class="list-group-item list-group-item-action list-group-item-primary">MANTENEDOR DE USUARIOS</a>
+  <a class="list-group-item list-group-item-action list-group-item-primary" href="{% url 'man_productos' 'crear' '0' %}"> MANTENEDOR DE PRODUCTOS</a>
+  <a class="list-group-item list-group-item-action list-group-item-primary" href="{% url 'ventas' %}">HISTORIAL DE VENTAS</a>
+  <a class="list-group-item list-group-item-action list-group-item-primary" href="{% url 'man_bodega' %}"> MANTENEDOR DE BODEGA</a>
 </div>
-<div id="footer">
-
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-  </body>
-</html>
+<br><br><br><br><br><br><br><br>
+{% endblock content %}
