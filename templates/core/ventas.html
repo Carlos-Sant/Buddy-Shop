@@ -1,0 +1,84 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+
+{% block content %}
+    <h1>Historial de ventas</h1>
+    
+    <table id="tabla-principal"  class="table table-hover table-striped table-bordered">
+        <thead class="table-info">
+            <tr >
+                <th class="fw-bolder"> Nro boleta </th>
+                <th class="fw-bolder"> Nombre Cliente </th>
+                <th class="fw-bolder"> Venta </th>
+                <th class="fw-bolder"> Despacho </th>
+                <th class="fw-bolder"> Entrega </th>
+                <th class="fw-bolder"> Subscrito </th>
+                <th class="fw-bolder"> Monto total </th>
+                <th class="fw-bolder"> Estado actual </th>
+                <th class="fw-bolder"> Detalle </th>
+                <th class="fw-bolder"> Cambiar estado </th>
+            </tr>
+        </thead> 
+        <tbody>
+            {% for boleta in historial %}
+                {% if boleta.estado == 'Anulado' %}
+                    <tr class="letra-boleta-anulada"> 
+                {% else %}
+                    <tr>
+                {% endif %}
+                    <td> {{ boleta.nro_boleta }} </td>
+                    <td> {{ boleta.nom_cliente }} </td>
+                    <td> {{ boleta.fecha_venta|formatear_fecha }} </td>
+                    <td> {{ boleta.fecha_despacho|formatear_fecha }} </td>
+                    <td> {{ boleta.fecha_entrega|formatear_fecha }} </td>
+                    <td> {{ boleta.subscrito }} </td>
+                    <td> {{ boleta.total_a_pagar|formatear_dinero  }} </td>
+                    <td> {{ boleta.estado }} </td>
+                    <td>
+                        <a href="{% url 'boleta' boleta.nro_boleta %}" class="btn btn-sm btn-secondary fw-bold">Detalle</a>
+                    </td>
+                    <td>
+                        <span>
+                            <div class="btn-group">
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Anulado' %}"  class="btn btn-sm btn-danger fw-bold">Anular</a>
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Vendido' %}" class="btn btn-sm btn-success fw-bold">Vender</a>
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Despachado' %}" class="btn btn-sm btn-warning fw-bold text-white">Despachar</a>
+                                <a href="{% url 'cambiar_estado_boleta' boleta.nro_boleta 'Entregado' %}" class="btn btn-sm btn-info fw-bold">Entregar</a>
+                            </div>
+                        </span>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>       
+    </table>
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if historial.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ historial.previous_page_number }}">Página anterior</a>
+                </li>
+            {% endif %}
+
+            {% for i in historial.paginator.page_range %}
+                {% if historial.number == i %}
+                    <li class="page-item active">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if historial.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ historial.next_page_number }}">Página siguiente</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+{% endblock content %}

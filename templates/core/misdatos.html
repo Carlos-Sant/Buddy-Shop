@@ -1,0 +1,137 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misdatos</title>
+  <style>
+    .error {
+      color: red;
+      font-weight: bolder;
+    }
+  </style>
+  <link rel="stylesheet" href="{%static 'core/css/style.css'%}" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600;700&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+</head>
+<div id="menu-superior">
+
+</div>
+<body>
+ 
+  <main role="main">
+    <div class="container">
+        <h1 class="text-left">Mis datos</h1>
+        <section>
+
+          <br>
+    
+            <form  method="POST" action="recibir_datos" id="v_misDatos">
+              <div class="container-fluid">
+                  <div class="row">
+                   
+                      <div class="col-sm-12 col-md-6">
+                        <!-- Campu rut -->
+                         <div class="mb-3 fw-bold">
+                          <label for="rut" class="form-label">RUT</label>
+                          <br>
+                          <input  name= "rut" type="text" class="form-control" id="rut" placeholder="Ingrese un rut" value="">
+                          </div> 
+                  
+                          <!-- Campo Nombre -->
+                          <div class="mb-3 fw-bold">
+                           <label for="nombres" class="form-label">Nombres</label>
+                           <br>
+                           <input value="" name ="nombres" type="text" class="form-control" id="nombres" placeholder="Ingrese un nombre">
+                          </div>
+
+                          <!-- Campo Apellido -->
+                          <div class="mb-3 fw-bold">
+                           <label for="apellidos" class="form-label">Apellidos</label>
+                           <br>
+                           <input value="" name= "apellidos" type="text" class="form-control" id="apellidos" placeholder="Ingrese un apellido">
+                          </div>
+                        
+                          <!-- Campo Email -->
+                          <div class="mb-3 fw-bold">
+                           <label for="email" class="form-label">Email</label>
+                           <br>
+                           <input value="" name="email" type="email" class="form-control" id="email" placeholder="Ingrese un Email">
+                          </div> 
+
+                          <!-- Campo Direccion -->
+                          <div class="mb-3 fw-bold">
+                            <h6 for="comuna" class="form-label">Dirección</h6>
+                            <textarea value="" name= "direccion" rows="4" class="form-control" id="direccion"> </textarea>
+                           </div>      
+
+                           <!-- Check box para la suscripcion  -->
+                           <div class="mb-3 fw-bold">
+                           <label for=" Con Subscripción" class="form-abel"> Con Subscripción</label>
+                          </div>
+                           <div class="mb-3 form-check ">
+                            <input  type="checkbox" class="form-check-input" id="Con Subscripción">
+                            <label class="form-check-label" for="Con subscripción">Deseo subscribirme con un aporte de $3000 mensuales y obtener un 5% de descuento en mis compras</label>
+                          </div>
+
+                          <!-- Campo contraseña -->
+                          <div class="mb-3 fw-bold">
+                            <label for="contraseña" class="form-label">Contraseña</label>
+                            <br>
+                            <input value="" name= "contraseña" type="password" class="form-control" id="contraseña" placeholder="minimo 5 caracteres">
+                           </div> 
+                           <div class="mb-3 fw-bold">
+                            <label for="recontraseña" class="form-label"> Repetir Contraseña</label>
+                            <br>
+                            <input  value="" name= "recontraseña" type="password" class="form-control" id="reContraseña" placeholder="Por favor repita la contraseña">
+                           </div> 
+
+                        
+                          <button id="btn_enviar" type="submit" class="btn btn-primary">Registrarse</button> 
+                          <button type="reset" class="btn btn-primary">Borrar todo</button>
+                      </div>
+                   
+                      <div class="col-sm-12 col-md-6">
+                          <table>
+                              <tr>
+                                  <td>
+                                  <img src="img/foto perfil.png" alt="" class="fotoperfil">    
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                    <div class="text-center ">
+                                      <button type="submit" class="btn btn-primary">Examinar...</button>
+                                    </div>
+                                  </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+            </form>
+        </section>
+    </div>
+</main>
+<br><br>
+  <div id="footer">
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

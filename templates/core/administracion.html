@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<h1>Administrar tienda</h1>
+</div>
+<div class="list-group">
+  <a href="usuarios.html" class="list-group-item list-group-item-action list-group-item-primary">MANTENEDOR DE USUARIOS</a>
+  <a class="list-group-item list-group-item-action list-group-item-primary" href="{% url 'man_productos' 'crear' '0' %}"> MANTENEDOR DE PRODUCTOS</a>
+  <a class="list-group-item list-group-item-action list-group-item-primary" href="{% url 'ventas' %}">HISTORIAL DE VENTAS</a>
+  <a class="list-group-item list-group-item-action list-group-item-primary" href="{% url 'man_bodega' %}"> MANTENEDOR DE BODEGA</a>
+</div>
+{% endblock content %}

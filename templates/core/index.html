@@ -1,0 +1,106 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+
+
+   {% block content %}
+    <h1 class="arial"><b></b>Tienda de Mascotas Buddy Store</b></h1>
+
+    <!-- Aqui es donde va el carrusel del inicio de la pagina -->
+    <main role="main">
+        <div class="container">
+            <section class="text-center">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="{%static 'core/images/carruselimagen1.PNG' %}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{%static 'core/images/imagencarrusel2.PNG'%}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{%static 'core/images/imagencarrusel3.PNG'%}" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Atras</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Siguiente</span>
+                    </button>
+                  </div>
+            </section>
+
+        </div>
+    </main>
+<br>
+<h4 class="fw-bolder text-center" style="color: green;">
+  <i class="fa-solid fa-shield-dog"></i> <i class="fa-solid fa-shield-cat"></i>
+  "Descubre las marcas expertas en mascotas y aprovecha los mejores precios en nuestra tienda. Aquí, el conocimiento se une a la calidad para consentir a tus peludos compañeros."
+   <i class="fa-solid fa-shield-dog"></i> <i class="fa-solid fa-shield-cat"></i>
+</h4>
+<br>
+    {% if productos %}
+  <div class="container-fluid">
+    <div class="row">
+      {% for producto in productos %}
+        <div class="card col-sm-12 col-md-6 col-lg-3 col-xl-2 border border-1 m-2 pt-3 pb-4" style="width: 15.2rem;">
+          <a href="{% url 'ficha' producto.id %}" class="link-bloque text-decoration-none text-dark">
+            <img src="/media/{{ producto.imagen }}" class="index-producto-imagen card-img-top" alt="">
+            <div class="card-body">
+              <h6 style="text-transform: uppercase; font-size: larger;" class="card-title">
+                <strong >{{ producto.nombre }}</strong>
+              </h6>
+              <button class="btn btn-dark btn-sm fw-bolder">{{ producto.categoria }}</button>
+              <br>
+              <h7 class="card-title"> 
+                {{ producto.html_estado|safe }}
+                <br>
+                {{ producto.html_precio|safe }}
+              </h7>
+              <p class="card-text index-producto-descripcion font-weight-light" data-toggle="tooltip" title="{{ descripcion_producto }}"> 
+                <em >{{ producto.descripcion }}</em>
+              </p>
+                <button class="btn btn-warning btn-sm fw-bolder font-italic" >En stock:</button><span class="font-italic">{{ producto.html_stock }}</span>
+        
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+  <h2>No se encontraron productos</h2>
+{% endif %}
+
+  
+    <br><br>
+    <div class="font-monospace" >
+    &nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-warning  btn-lg">
+      <a href="{% url 'ropa' %}" style="color:black;text-decoration:none">OFERTA IRRESISTIBLE</a>
+    </button> 
+    &nbsp;&nbsp;&nbsp;
+    Por compras superiores a $20.000 ya estás concursando por una prenda de vestir.
+    <a href="{% url 'ropa' %}" class="font-monospace" style="color:black">
+      Mira Aquí los premios 
+    </a>
+    </div>
+    <br><br><br>
+    
+    {% endblock content %}
+
+    {% block script %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="{% static 'core/js/script.js' %}"></script>
+    {% endblock script %}
+  </body>
+</html>

@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% load custom_filters %}
+
+{% block stylesheet %}
+
+{% endblock stylesheet %}
+
+{% block content %}
+  <h1> Registrarme </h1>
+
+  <form method="POST" enctype="multipart/form-data" id="form">
+
+    {% csrf_token %}
+    
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="form-row">
+          {% for field in form %}
+              <label for="{{ field.id_for_label }}" class="col-sm-5 col-form-label fw-bold">
+                {{ field.label }}
+              </label>
+              <div class="col-sm-7">
+                {{ field }}
+              </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+      
+      <div class="col-sm-12 col-md-6">
+        
+        {% if form.imagen.value %}
+          <img id="registrarme-imagen" src="/media/{{ form.imagen.value }}">
+        {% else %}
+          <img id="registrarme-imagen" src="{% static 'core/images/NOTFOUND.png' %}">
+        {% endif %}
+
+        {% if form.errors %}
+          <br>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ form.errors }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <p id="textoMostrado">Al registrarme con suscripcion estoy de acuerdo en pagar $3.000 mensuales por beneficios como Descuentos y Ofertas exclusivas</p>
+    </div>
+    <div class="mt-2 mb-3">
+      <button type="submit" class="btn btn-primary ancho-150px"> Registrarme </button>
+      <button type="reset" class="btn btn-info ancho-150px"> Limpiar </button>
+    </div>
+
+    <div id="mensaje-container">
+    </div>
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {% autoescape off %}
+          {{ message }}
+          {% endautoescape %}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+  </form>
+
+{% endblock content %}
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+<script src="{% static 'core/js/registro.js' %}"></script>
+{% endblock script %}
